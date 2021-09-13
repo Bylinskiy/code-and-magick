@@ -1,5 +1,5 @@
 'use strict';
-(function () {
+window.dialog = (function () {
 
   var setup = document.querySelector('.setup');
   var setupOpen = document.querySelector('.setup-open');
@@ -36,4 +36,8 @@
   setupClose.addEventListener('keydown', function (evt) {
     window.util.isEnterEvent(evt, closePopup);
   });
+
+  return {
+    setup: setup
+  };
 })();
