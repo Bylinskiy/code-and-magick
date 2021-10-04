@@ -46,7 +46,7 @@ var errorHandler = function (errorMessage) {
   document.body.insertAdjacentElement('afterbegin', node);
 };
 
-window.load(successHandler, errorHandler);
+window.backend.load(successHandler, errorHandler);
 
 
 var fireballSetup = document.querySelector('.setup-fireball-wrap');
@@ -77,7 +77,7 @@ wizardEyesSetup.addEventListener('click', function () {
 
 var form = document.querySelector('.setup-wizard-form');
 form.addEventListener('submit', function (evt) {
-  window.upload(new FormData(form), function (response) {
+  window.backend.save(new FormData(form), function () {
     window.dialog.setup.classList.add('hidden');
   });
   evt.preventDefault();
